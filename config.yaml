@@ -1,0 +1,99 @@
+# config.yaml - Physical AI Daily Digest 통합 설정
+
+# =============================================================================
+# LLM API 설정
+# =============================================================================
+llm:
+  enabled: true
+  provider: google                # openai | anthropic | google | openrouter | ollama | custom
+  model: gemini-2.0-flash-exp
+  temperature: 0.3
+  max_tokens: 8000                # 배치 처리를 위해 증가
+  timeout: 120
+  retry_count: 3
+  retry_delay: 5
+  rate_limit_delay: 6             # RPM 10회 제한 대응
+  batch_size: 10                  # 한 번에 처리할 기사 수
+
+# =============================================================================
+# 번역 및 요약 설정
+# =============================================================================
+translation:
+  target_language: ko
+  summary_style: concise
+  summary_length: 2-3
+  translate_title: true
+  preserve_technical_terms: true
+
+# =============================================================================
+# RSS 피드 목록
+# =============================================================================
+feeds:
+  # Korea
+  로봇신문: https://www.irobotnews.com/rss/allArticle.xml
+  전자신문 AI: http://rss.etnews.com/04046.xml
+
+  # NVIDIA & Simulation
+  NVIDIA Blog: https://blogs.nvidia.com/feed/
+  NVIDIA Omniverse Blog: https://developer.nvidia.com/blog/tag/omniverse/feed
+
+  # Robotics & Industry
+  The Robot Report: http://www.therobotreport.com/feed
+  IEEE Spectrum Robotics: https://spectrum.ieee.org/rss/robotics
+  Robohub: https://robohub.org/feed/
+  MIT News Robotics: https://news.mit.edu/topic/mitrobotics-rss.xml
+
+  # AI Research & Labs
+  DeepMind Blog: https://deepmind.google/blog/rss.xml
+  OpenAI News: https://openai.com/news/rss.xml
+  Google AI Blog: https://blog.research.google/feeds/posts/default?alt=rss
+
+  # Research & Papers
+  arXiv Robotics: http://arxiv.org/rss/cs.RO
+  ScienceDaily Robotics: https://www.sciencedaily.com/rss/computers_math/robotics.xml
+
+# =============================================================================
+# 카테고리 분류 설정
+# =============================================================================
+categorization:
+  enabled: true
+  categories:
+    nvidia:
+      name: "🟢 NVIDIA & Simulation"
+      keywords: ["nvidia", "omniverse", "isaac", "jetson", "cuda", "tensorrt", "drive", "orin", "cosmos", "dgx", "blackwell"]
+    robotics:
+      name: "🤖 Robotics & Hardware"
+      keywords: ["robot", "humanoid", "manipulator", "gripper", "actuator", "sensor", "lidar", "boston dynamics", "figure", "tesla bot", "optimus", "unitree", "agility", "sanctuary", "1x"]
+    airesearch:
+      name: "🧠 AI Research & Labs"
+      keywords: ["deepmind", "openai", "google ai", "anthropic", "meta ai", "gpt", "gemini", "llm", "vla", "foundation model"]
+    research:
+      name: "📚 Papers & Academia"
+      keywords: ["arxiv", "paper", "mit", "stanford", "berkeley", "cmu", "algorithm", "transformer", "diffusion", "reinforcement learning", "imitation learning"]
+    industry:
+      name: "🏭 Industry & Business"
+      keywords: ["funding", "startup", "acquisition", "partnership", "market", "manufacturing", "warehouse", "logistics", "automation", "million", "billion"]
+    korea:
+      name: "🇰🇷 Korea"
+      keywords: ["한국", "korea", "삼성", "현대", "lg", "네이버", "카카오", "두산", "rainbow", "레인보우", "로봇", "인공지능"]
+    general:
+      name: "📰 General"
+      keywords: []
+
+# =============================================================================
+# Slack 설정
+# =============================================================================
+slack:
+  max_articles_per_category: 5
+  show_summary: true
+  show_source: true
+  unfurl_links: false
+  unfurl_media: false
+
+# =============================================================================
+# 스케줄 설정
+# =============================================================================
+schedule:
+  timezone: Asia/Seoul
+  hour: 9
+  lookback_hours: 24
