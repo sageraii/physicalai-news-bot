@@ -44,11 +44,14 @@ feeds:
   IEEE Spectrum Robotics: https://spectrum.ieee.org/rss/robotics
   Robohub: https://robohub.org/feed/
   MIT News Robotics: https://news.mit.edu/topic/mitrobotics-rss.xml
+  Roboroq: https://blog.robotiq.com/rss.xml
+  New Atlas: https://newatlas.com/robotics/index.rss
 
   # AI Research & Labs
   DeepMind Blog: https://deepmind.google/blog/rss.xml
   OpenAI News: https://openai.com/news/rss.xml
   Google AI Blog: https://blog.research.google/feeds/posts/default?alt=rss
+  Machine Learning Mastery Blog: https://machinelearningmastery.com/feed/
 
   # Research & Papers
   arXiv Robotics: http://arxiv.org/rss/cs.RO
