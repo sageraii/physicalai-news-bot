@@ -36,6 +36,8 @@ feeds:
   # NVIDIA & Simulation
   NVIDIA Blog: https://blogs.nvidia.com/feed/
   NVIDIA Omniverse Blog: https://developer.nvidia.com/blog/tag/omniverse/feed
+  NVIDIA Simulation Modeling Design: https://nvidianews.nvidia.com/cats/simulation_modeling_design.xml
+  NVIDIA Robotics: https://nvidianews.nvidia.com/cats/robotics.xml
 
   # Robotics & Industry
   The Robot Report: http://www.therobotreport.com/feed
