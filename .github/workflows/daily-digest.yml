@@ -3,7 +3,7 @@ name: Physical AI Daily Digest
 on:
   schedule:
     # 매일 한국시간 오전 10시 (UTC 1시)
-    - cron: '30 0 * * *'
+    - cron: '0 0 * * *'
 
   # 수동 실행 (테스트용)
   workflow_dispatch:
